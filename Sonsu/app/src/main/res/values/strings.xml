@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Sonsu</string>
+
+    <!-- 탭-->
+    <string name="tab_study">수강하기</string>
+    <string name="tab_wrong">오답노트</string>
+    <string name="tab_home">홈</string>
+    <string name="tab_dictionary">사전</string>
+    <string name="tab_mypage">마이페이지</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

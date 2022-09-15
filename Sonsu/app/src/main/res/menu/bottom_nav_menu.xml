@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--        checked : 처음 실행 시켰을 때 이 탭이 on 상태인지 off상태일지 선택-->
+
+    <item
+        android:id="@+id/tab_study"
+        android:icon="@drawable/selector_tab_study"
+        android:checked="false"
+        android:enabled="true"
+        android:title="@string/tab_study" />
+
+    <item
+        android:id="@+id/tab_wrong"
+        android:icon="@drawable/selector_tab_wrong"
+        android:checked="false"
+        android:enabled="true"
+        android:title="@string/tab_wrong" />
+
+    <item
+        android:id="@+id/tab_home"
+        android:icon="@drawable/selector_tab_home"
+        android:checked="true"
+        android:enabled="true"
+        android:title="@string/tab_home" />
+
+    <item
+        android:id="@+id/tab_dictionary"
+        android:icon="@drawable/selector_tab_dictionary"
+        android:checked="false"
+        android:enabled="true"
+        android:title="@string/tab_dictionary" />
+
+    <item
+        android:id="@+id/tab_mypage"
+        android:icon="@drawable/selector_tab_mypage"
+        android:checked="false"
+        android:enabled="true"
+        android:title="@string/tab_mypage" />
+</menu>
