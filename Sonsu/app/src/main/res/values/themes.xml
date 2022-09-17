@@ -14,4 +14,17 @@
         <!-- Customize your theme here. -->
         <item name="android:windowLightStatusBar">true</item>
     </style>
+
+    <style name="bottom_nav_text_inactive" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/spoqa_han_sans_neo_regular</item>
+    </style>
+
+<!--    <style name="bottom_nav_text_active" parent="TextAppearance.AppCompat">-->
+<!--        <item name="android:textSize">15dp</item>-->
+<!--        <item name="android:textColor">@color/text_color</item>-->
+<!--        <item name="fontFamily">@font/spoqa_han_sans_neo_regular</item>-->
+<!--    </style>-->
 </resources>
