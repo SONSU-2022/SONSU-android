@@ -14,4 +14,64 @@
     <string name="home_hello_1">어서오세요</string>
     <string name="home_hello_2">여기는 손수입니다</string>
 
+<!--    수강하기-->
+    <string name="study_title">수강하기</string>
+    <string name="study_explain">본인의 진도를 확인하여\n수업을 수강하세요</string>
+    <string name="study_level_1">초급</string>
+    <string name="study_level_2">중급</string>
+    <string name="study_level_3">고급</string>
+
+<!--    단계-->
+    <string-array name="level">
+        <item>초급</item>
+        <item>중급</item>
+        <item>고급</item>
+    </string-array>
+
+<!--    커리큘럼-->
+    <string-array name="curri1">
+        <item>자음</item>
+        <item>모음</item>
+    </string-array>
+
+    <string-array name="curri2">
+        <item>짧은 문장</item>
+    </string-array>
+
+    <string-array name="curri3">
+        <item>단어</item>
+    </string-array>
+
+<!--    단어-->
+    <string-array name="word1">
+        <item>ㄱ(기역)</item>
+        <item>ㄴ(니은)</item>
+        <item>ㄷ(디귿)</item>
+    </string-array>
+
+
+    <string-array name="word11">
+        <item>ㅏ(아)</item>
+        <item>ㅓ(어)</item>
+        <item>ㅜ(우)</item>
+    </string-array>
+
+    <string-array name="word2">
+        <item>안녕하세요</item>
+        <item>괜찮습니다</item>
+        <item>감사합니다</item>
+        <item>미안합니다</item>
+        <item>좋다</item>
+        <item>싫다</item>
+    </string-array>
+
+    <string-array name="word3">
+        <item>사람</item>
+        <item>생각</item>
+        <item>학교</item>
+        <item>친구</item>
+        <item>마음</item>
+    </string-array>
+
+
 </resources>

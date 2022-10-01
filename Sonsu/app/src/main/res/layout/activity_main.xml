@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
     <!--    각 버튼들을 선택했을 때 나올 fragment가 위치할 framelayout-->
@@ -11,22 +12,33 @@
         android:id="@+id/main_fl"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/main_bottom_nav"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    <FrameLayout-->
+    <!--        android:id="@+id/frameLayoutStudy"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"/>-->
+
+    <FrameLayout
+        android:id="@+id/frameLayoutStudyList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/main_fl" />
 
     <!--    labelVisibilityMode : 탭 이름 보이게 하려면 labeled, 안보이게 하려면 unlabeled-->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/main_bottom_nav"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        app:itemIconSize="35dp"
-        app:itemTextAppearanceInactive="@style/bottom_nav_text_inactive"
-        app:itemTextAppearanceActive="@style/bottom_nav_text_inactive"
-        app:labelVisibilityMode="labeled"
-        app:layout_constraintBottom_toBottomOf="parent"
-
         app:itemBackground="@android:color/white"
+        app:itemIconSize="35dp"
+        app:itemTextAppearanceActive="@style/bottom_nav_text_inactive"
+        app:itemTextAppearanceInactive="@style/bottom_nav_text_inactive"
+        app:labelVisibilityMode="labeled"
+
+        app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_nav_menu" />
-<!--    app:itemTextColor="@color/selector_nav_color"-->
+    <!--    app:itemTextColor="@color/selector_nav_color"-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

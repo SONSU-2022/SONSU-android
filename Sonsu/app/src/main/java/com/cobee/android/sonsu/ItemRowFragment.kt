@@ -2,15 +2,16 @@ package com.cobee.android.sonsu
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.children
 import androidx.fragment.app.Fragment
-import com.cobee.android.sonsu.databinding.FragmentStudyBinding
+import com.cobee.android.sonsu.databinding.ItemRowBinding
 
-class StudyFragment : Fragment(), View.OnClickListener {
-    private var _binding: FragmentStudyBinding? = null
+class ItemRowFragment : Fragment(), View.OnClickListener {
+    private var _binding: ItemRowBinding? = null
     private val binding get() = _binding!!
     var mainActivity: MainActivity? = null
 
@@ -24,7 +25,8 @@ class StudyFragment : Fragment(), View.OnClickListener {
         container: ViewGroup?,
         savedInstantState: Bundle?
     ): View {
-        _binding = FragmentStudyBinding.inflate(inflater, container, false)
+        _binding = ItemRowBinding.inflate(inflater, container, false)
+
         return binding.root
     }
 
@@ -34,7 +36,7 @@ class StudyFragment : Fragment(), View.OnClickListener {
     }
 
     private fun setOnClickListener() {
-        val btnSequence = binding.studyFrame.children
+        val btnSequence = binding.studylistConstlayout.children
         btnSequence.forEach { btn ->
             btn.setOnClickListener(this)
         }
@@ -42,14 +44,9 @@ class StudyFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(v: View) {
         when (v.id) {
-            R.id.study_btn_1 -> {
-                mainActivity!!.openStudyListOnStudy(1)
-            }
-            R.id.study_btn_2 -> {
-                mainActivity!!.openStudyListOnStudy(2)
-            }
-            R.id.study_btn_3 -> {
-                mainActivity!!.openStudyListOnStudy(3)
+            R.id.word_name1 -> {
+                Log.v("test", "hello?")
+                mainActivity!!.openStudyPlayOnStudyList(1)
             }
         }
     }

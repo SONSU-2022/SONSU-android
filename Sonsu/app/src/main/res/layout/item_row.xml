@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/studylist_constlayout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/selector_exlist_studylist"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:minHeight="?attr/actionBarSize"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="단계"
+            android:textColor="@color/text_color"
+            android:textSize="25sp"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/img_more"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginBottom="10dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_close_explain"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/chile_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/white" />
+
+    <LinearLayout
+        android:id="@+id/layout_expand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/word_name1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ㄱ (기역)"
+            android:textColor="@color/text_color"
+            android:textAlignment="viewStart"
+            android:padding="18dp"
+            android:paddingStart="15dp"
+            android:background="@drawable/layerlist_btn_studylist"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/word_name2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ㄱ (기역)"
+            android:textColor="@color/text_color"
+            android:textAlignment="viewStart"
+            android:padding="18dp"
+            android:paddingStart="15dp"
+            android:background="@drawable/layerlist_btn_studylist"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/word_name3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ㄱ (기역)"
+            android:textColor="@color/text_color"
+            android:textAlignment="viewStart"
+            android:padding="18dp"
+            android:paddingStart="15dp"
+            android:background="@drawable/layerlist_btn_studylist"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+</LinearLayout>
