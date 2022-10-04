@@ -34,7 +34,7 @@
             android:layout_height="?attr/actionBarSize"
             android:layout_marginBottom="10dp"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/ic_close_explain"
+            android:src="@drawable/ic_arrow"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -43,7 +43,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <View
-        android:id="@+id/chile_view"
+        android:id="@+id/child_view"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/white" />
@@ -58,30 +58,6 @@
 
         <Button
             android:id="@+id/word_name1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="ㄱ (기역)"
-            android:textColor="@color/text_color"
-            android:textAlignment="viewStart"
-            android:padding="18dp"
-            android:paddingStart="15dp"
-            android:background="@drawable/layerlist_btn_studylist"
-            android:textSize="20sp" />
-
-        <Button
-            android:id="@+id/word_name2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="ㄱ (기역)"
-            android:textColor="@color/text_color"
-            android:textAlignment="viewStart"
-            android:padding="18dp"
-            android:paddingStart="15dp"
-            android:background="@drawable/layerlist_btn_studylist"
-            android:textSize="20sp" />
-
-        <Button
-            android:id="@+id/word_name3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="ㄱ (기역)"

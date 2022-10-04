@@ -28,10 +28,10 @@
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_main.xml" value="0.17798913043478262" />
         <entry key="app/src/main/res/layout/fragment_mypage.xml" value="0.17798913043478262" />
-        <entry key="app/src/main/res/layout/fragment_study.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_study.xml" value="0.31437377929687504" />
         <entry key="app/src/main/res/layout/fragment_studylist.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_studyplay.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_wrong.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/fragment_studyplay.xml" value="0.29644775390625" />
+        <entry key="app/src/main/res/layout/fragment_wrong.xml" value="0.27733001708984373" />
         <entry key="app/src/main/res/layout/item_row.xml" value="0.25729166666666664" />
         <entry key="app/src/main/res/layout/parent_list.xml" value="0.21310202632742517" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.367547607421875" />
