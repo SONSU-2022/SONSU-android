@@ -1,13 +1,13 @@
 package com.cobee.android.sonsu
 
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.cobee.android.sonsu.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private val fragmentStudy = StudyFragment()
     private val fragmentStudyList = StudyListFragment()
 
     lateinit var binding: ActivityMainBinding
