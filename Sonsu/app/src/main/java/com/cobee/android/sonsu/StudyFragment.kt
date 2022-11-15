@@ -3,12 +3,21 @@ package com.cobee.android.sonsu
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.*
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.children
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import com.cobee.android.sonsu.databinding.FragmentStudyBinding
+import org.json.JSONArray
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import java.util.ArrayList
 
 class StudyFragment : Fragment(), View.OnClickListener {
     private var _binding: FragmentStudyBinding? = null
@@ -27,24 +36,14 @@ class StudyFragment : Fragment(), View.OnClickListener {
     ): View {
         _binding = FragmentStudyBinding.inflate(inflater, container, false)
 
-        (activity as AppCompatActivity).setSupportActionBar(binding.studyToolbar)
-        (activity as AppCompatActivity).supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        binding.studyLv.setOnItemClickListener {parent, view, position, id ->
+            mainActivity!!.openStudyPlayOnStudyList(0)
+            Log.d("hmm", position.toString())
+        }
 
         return binding.root
     }
 
-    //item 버튼 클릭 했을 때
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item?.itemId) {
-            android.R.id.home -> {
-                //뒤로가기 버튼 눌렀을 때
-                startActivity(Intent(context, HomeFragment::class.java))
-//                (activity as AppCompatActivity).finish()
-                return true
-            }
-            else -> return super.onOptionsItemSelected(item)
-        }
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -59,22 +58,110 @@ class StudyFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(v: View) {
+        val retrofit = Retrofit.Builder().baseUrl("http://172.20.10.2:8080/")
+            .addConverterFactory(GsonConverterFactory.create()).build();
+        val retrofitService: RetrofitService = retrofit.create(RetrofitService::class.java);
+
         when (v.id) {
             R.id.study_btn_1 -> {
-                mainActivity!!.openStudyListOnStudy(1)
+                retrofitService.getStudyData(1)?.enqueue(object: Callback<StudyData>{
+                    override fun onResponse(call: Call<StudyData>, response: Response<StudyData>) {
+                        if(response.isSuccessful){
+                            var result: StudyData = response.body()!!
+                            val jsonString = result.data.toString()
+                            val jArray = JSONArray(jsonString)
+                            val arrList : ArrayList<String> = arrayListOf()
+
+                            for (i in 0 until jArray.length()) {
+                                val obj = jArray.getJSONObject(i)
+                                val wordsDto = obj.getJSONArray("wordsDto")
+                                for (j in 0 until wordsDto.length()){
+                                    val dtoObj = wordsDto.getJSONObject(j)
+                                    val wordIdx = dtoObj.getInt("wordIdx")
+                                    val wordName = dtoObj.getString("wordName")
+                                    arrList.add(wordName)
+                                    Log.d("test", "url($i): $wordName")
+                                }
+                            }
+                            Log.d ("result", "성공" + arrList)
+                            val wAdapter = WordAdapter(arrList)
+                            binding.studyLv.adapter = wAdapter
+                        } else {
+                            Log.d ("result", "실패")
+                        }
+                    }
+                    override fun onFailure(call: Call<StudyData>, t: Throwable) {
+                        Log.d("result", "onFailure 에러: " + t.message.toString());
+                    }
+                })
             }
             R.id.study_btn_2 -> {
-                mainActivity!!.openStudyListOnStudy(2)
+                retrofitService.getStudyData(2)?.enqueue(object: Callback<StudyData>{
+                    override fun onResponse(call: Call<StudyData>, response: Response<StudyData>) {
+                        if(response.isSuccessful){
+                            var result: StudyData = response.body()!!
+                            val jsonString = result.data.toString()
+                            val jArray = JSONArray(jsonString)
+                            val arrList : ArrayList<String> = arrayListOf()
+
+                            for (i in 0 until jArray.length()) {
+                                val obj = jArray.getJSONObject(i)
+                                val wordsDto = obj.getJSONArray("wordsDto")
+
+                                for (j in 0 until wordsDto.length()){
+                                    val dtoObj = wordsDto.getJSONObject(j)
+                                    val wordIdx = dtoObj.getInt("wordIdx")
+                                    val wordName = dtoObj.getString("wordName")
+                                    arrList.add(wordName)
+                                    Log.d("test", "url($i): $wordName")
+                                }
+                            }
+                            Log.d ("result", "성공" + arrList)
+                            val wAdapter = WordAdapter(arrList)
+                            binding.studyLv.adapter = wAdapter
+                        } else {
+                            Log.d ("result", "실패")
+                        }
+                    }
+                    override fun onFailure(call: Call<StudyData>, t: Throwable) {
+                        Log.d("result", "onFailure 에러: " + t.message.toString());
+                    }
+                })
             }
             R.id.study_btn_3 -> {
-                mainActivity!!.openStudyListOnStudy(3)
+                retrofitService.getStudyData(3)?.enqueue(object: Callback<StudyData>{
+                    override fun onResponse(call: Call<StudyData>, response: Response<StudyData>) {
+                        if(response.isSuccessful){
+                            var result: StudyData = response.body()!!
+                            val jsonString = result.data.toString()
+                            val jArray = JSONArray(jsonString)
+                            val arrList : ArrayList<String> = arrayListOf()
+
+                            for (i in 0 until jArray.length()) {
+                                val obj = jArray.getJSONObject(i)
+                                val wordsDto = obj.getJSONArray("wordsDto")
+
+                                for (j in 0 until wordsDto.length()){
+                                    val dtoObj = wordsDto.getJSONObject(j)
+                                    val wordIdx = dtoObj.getInt("wordIdx")
+                                    val wordName = dtoObj.getString("wordName")
+                                    arrList.add(wordName)
+                                    Log.d("test", "url($i): $wordName")
+                                }
+                            }
+                            Log.d ("result", "성공" + arrList)
+                            val wAdapter = WordAdapter(arrList)
+                            binding.studyLv.adapter = wAdapter
+                        } else {
+                            Log.d ("result", "실패")
+                        }
+                    }
+                    override fun onFailure(call: Call<StudyData>, t: Throwable) {
+                        Log.d("result", "onFailure 에러: " + t.message.toString());
+                    }
+                })
             }
         }
     }
-
-//    companion object {
-//        private const val TAG = "MainFragment"
-//        fun instance() = MainFragment()
-//    }
 
 }

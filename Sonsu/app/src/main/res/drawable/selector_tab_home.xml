@@ -2,5 +2,5 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 <!--    선택 여부에 따라 아이콘이 다르도록 만든 이미지 셀렉터 xml 파일-->
     <item android:drawable="@drawable/ic_home" android:state_checked="false" />
-    <item android:drawable="@drawable/ic_home" android:state_checked="true" />
+    <item android:drawable="@drawable/ic_home2" android:state_checked="true" />
 </selector>
